@@ -13,6 +13,15 @@ Stuff i use:
 ### Programming
 - Code editor: Sublime Text / VS Code / Notepad++ / Neovim + LazyVim
 - AI agent: Gemini
-<sup>(i know putting this is stupid lol)
+- 
+<sup>(i know putting this is stupid lol)</sup>
 - Terminal: Windows Terminal (or kitty, for Linux)
-<sup>(i know putting this is stupid lol)
+### Tools
+- File manager: Windows Explorer / lf
+
+<sup>i dont use yazi because it works terribly 😭</sup>
+- Compress / descompression software: 7Zip/WinRAR
+### Other stuff
+- OS: Dualboot: Windows 10 Home & Linux Mint XFCE 22.3
+
+
