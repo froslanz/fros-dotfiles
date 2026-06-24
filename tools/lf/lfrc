@@ -1,0 +1,80 @@
+# basic config
+set shell powershell
+set shellopts "-NoProfile"
+
+# UI
+set hidden true
+set drawbox true
+set icons true
+
+# define custom funcs
+
+# cmd: Trash item
+cmd trash ${{
+    $archivo = $env:f
+    Add-Type -AssemblyName Microsoft.VisualBasic
+    if (Test-Path -Path $archivo -PathType Leaf) {
+        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($archivo, 'OnlyErrorDialogs', 'SendToRecycleBin')
+    } else {
+        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteDirectory($archivo, 'OnlyErrorDialogs', 'SendToRecycleBin')
+    }
+    lf -remote "send $env:id reload"
+}}
+
+# cmd: delete permanently
+cmd delete_forever ${{
+    Remove-Item -Recurse -Force $env:f
+    lf -remote "send $env:id reload"
+}}
+
+# cmd: Extract files
+cmd extract_archive ${{
+    $archivo = $env:f
+    $ext = [System.IO.Path]::GetExtension($archivo).ToLower()
+    
+    if ($ext -in @('.zip', '.rar', '.7z')) {
+        $nombre = [System.IO.Path]::GetFileNameWithoutExtension($archivo)
+        & "C:\Program Files\7-Zip\7z.exe" x $archivo "-o$nombre"
+        lf -remote "send $env:id reload"
+    } else {
+        lf -remote "send $env:id echo You can only extract .7z, .rar or .zip files."
+    }
+}}
+
+# cmd: Compressor
+cmd compress_folder ${{
+    $ruta = $env:f
+    
+    if (Test-Path -Path $ruta -PathType Container) {
+        $nombreCarpeta = [System.IO.Path]::GetFileName($ruta)
+        $archivoSalida = "$ruta.zip"
+        
+        & "C:\Program Files\7-Zip\7z.exe" a -tzip $archivoSalida $ruta
+        lf -remote "send $env:id reload"
+    } else {
+        lf -remote "send $env:id echo Error: You can only compress folders."
+    }
+}}
+
+# Binds
+
+map e $cmd /c nvim "%f%"
+map l open
+map <right> open
+
+# shortcuts
+map gh cd ~
+map gd cd ~/Downloads
+map gc cd ~/Documents
+map g. cd ~/AppData/Roaming
+
+# file management
+map dd trash
+map dD delete_forever
+map r rename
+
+# compression
+map X extract_archive
+map Z compress_folder
+
+
