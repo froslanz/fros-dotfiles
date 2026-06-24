@@ -13,7 +13,6 @@ Stuff i use:
 ### Programming
 - Code editor: Sublime Text / VS Code / Notepad++ / Neovim + LazyVim
 - AI agent: Gemini
-- 
 <sup>(i know putting this is stupid lol)</sup>
 - Terminal: Windows Terminal (or kitty, for Linux)
 ### Tools
