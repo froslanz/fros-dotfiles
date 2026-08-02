@@ -12,7 +12,7 @@ Stuff i use:
 - MP3 editor: Audacity
 - Video downloader: ATubeCatcher/yt-dlp
 ### Programming
-- Code editor: Sublime Text / VS Code / Notepad++ / Neovim + LazyVim
+- Code editor: Sublime Text / VS Code / Notepad++ / Neovim + LazyVim / Vim
 - AI agent: Gemini
 <sup>(i know putting this is stupid lol)</sup>
 - Terminal: Windows Terminal (or kitty, for Linux)
