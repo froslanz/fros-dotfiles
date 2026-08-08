@@ -23,5 +23,6 @@ Stuff i use:
 - Compress / descompression software: 7Zip/WinRAR
 ### Other stuff
 - OS: Dualboot: Windows 10 Home & Linux Mint XFCE 22.3
+- Window Manager: i3wm / GNOME
 
 
