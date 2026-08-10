@@ -4,11 +4,14 @@
 - Video recorder: OBS Studio
 - Video editor: Shotcut
 - MP3 editor: Audacity
+
 Video downloader
   - ATubeCatcher
   - yt-dlp
+
 ### Programming
-Code editor:
+
+#### Code editor:
   - Sublime Text
   - VS Code
   - Notepad++
@@ -19,12 +22,13 @@ Code editor:
 AI agent: Gemini
 <sup>(i know putting this is stupid lol)</sup>
 
-Terminal:
+#### Terminal:
   - Windows Terminal
   - Kitty (Linux)
 
 ### Tools
-File manager:
+
+#### File manager:
   - Windows Explorer
   - lf
   - ranger
@@ -33,13 +37,13 @@ File manager:
 <sup>i dont use yazi because it works terribly 😭</sup>
 
 
-- Compress / descompression software:
+#### Compress / descompression software:
   - 7Zip
   - WinRAR
  
 ### Other stuff
 - OS: Dualboot: Windows 10 Home & Linux Mint XFCE 22.3
-- Window Manager:
+#### Window Manager:
   - i3wm
   - GNOME
   - XFCE
