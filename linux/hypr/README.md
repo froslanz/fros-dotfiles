@@ -1,4 +1,2 @@
 # Please read me
-Dont confuse Hypr with Hyprland, Hypr is basically Hyprland but for X11, and it is really outdated. I will post the configs i use here, also notes are included in the dotfiles.
-
-Go into the `hyprland` folder to find my actual configs for Hyprland.
+These are my Hyprland configs. If you want to find my hypr configs, (basically Hyprland but outdated and with X11 support), go into the hyprx11 folder.
