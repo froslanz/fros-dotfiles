@@ -42,8 +42,9 @@ AI agent: Gemini
   - WinRAR
  
 ### Other stuff
-- OS: Dualboot: Windows 10 Home & Linux Mint XFCE 22.3
-#### Window Manager:
-  - i3wm
-  - GNOME
-  - XFCE
+  - OS: Dualboot: Windows 10 Home & CachyOS
+#### Window Managers:
+  - Hyprland
+  - Sway
+  - KDE Plasma (i dont use it, i prefer GNOME for light work)
+  
