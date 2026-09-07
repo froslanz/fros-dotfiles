@@ -7,4 +7,5 @@ These configs are compatible with Hyprmod
 
 ## Credits
 Hyprmod: https://github.com/BlueManCZ/hyprmod
+
 Hyprlock base config: https://github.com/mahaveergurjar/Hyprlock-Dots
