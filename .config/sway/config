@@ -1,8 +1,4 @@
 include catppuccin-mocha
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
 
 ### Variables
 #
@@ -16,9 +12,7 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu exec env XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/angel/.local/share/flatpak/exports/share:/usr/local/share:/usr/share" rofi -show drun
-
-
+set $menu "wofi --show drun --conf ~/.config/wofi/config --style ~/.config/wofi/mocha-mauve.css"
 
 ### Output configuration
 #
@@ -86,7 +80,7 @@ output * bg /home/angel/wallpapers/cave-sunset-view.png fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'loginctl terminate-user $USER'
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -220,7 +214,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim -g(slurp)
+    bindsym Print exec grim
 
 #
 # Status Bar:
@@ -228,7 +222,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-
+    mode invisible
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
@@ -237,9 +231,16 @@ bar {
         statusline $text
         background $base
         inactive_workspace #32323200 #32323200 #5c5c5c
+    # target
+	focused_workspace  $base  $mauve    $crust
+    	active_workspace   $base  $surface2 $text
+    	inactive_workspace $base  $base     $text
+    	urgent_workspace   $base  $red      $crust    
+
     }
 }
 default_border pixel 2
+default_floating_border pixel 2
 
 gaps inner 10
 gaps outer 5
@@ -250,4 +251,6 @@ client.focused     $mauve  $mauve  $text   $mauve    $mauve
 client.unfocused   #4c566a #2e3440 #d8dee8 #4c566a   #4c566a
 
 
+
+exec waybar
 include /etc/sway/config.d/*

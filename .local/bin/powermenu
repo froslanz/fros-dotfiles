@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+action=$(printf "Shutdown\nRestart\nLock" | fzf) || exit 0
+
+case "$action" in
+	Shutdown) systemctl poweroff ;;
+	Restart)  systemctl reboot ;;
+	Lock)  hyprlock ;;
+esac
